@@ -19,9 +19,9 @@ password = os.getenv("HIVE_PSWD")
 # Conexão com o MongoDB
 mongo_user = os.getenv('MONGO_USER')
 mongo_password = os.getenv('MONGO_PASSWORD')
-uri = f"mongodb+srv://{mongo_user}:{mongo_password}@prova2.vopbq5y.mongodb.net/?retryWrites=true&w=majority&appName=Prova2"
+uri = f"mongodb+srv://{mongo_user}:{mongo_password}@cluster0.efffh0v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 client = MongoClient(uri, server_api=ServerApi('1'))
-db = client['nome_do_banco_de_dados']  
+db = client['PROVA2_M9']  
 metabase_collection = db['metabase']
 
 # Verifica se a coleção existe e cria se não existir
@@ -34,7 +34,10 @@ def on_message(client, userdata, message):
     print(f"Dados do Sensor Recebidos: {sensor_data}")
 
     # Insere os dados recebidos no MongoDB
-    metabase_collection.insert_one({'Sensor': sensor_data['Sensor'], 'data': sensor_data['data']})
+    metabase_collection.insert_one({'idSensor':sensor_data['idSensor'],
+                                    'tipoPoluente':sensor_data['tipoPoluente'],
+                                    'data':sensor_data['data'],
+                                    'timestamp':sensor_data['timestamp']})
 
 # Callback para quando o cliente recebe uma resposta CONNACK do servidor.
 def on_connect(client, userdata, flags, reason_code, properties):

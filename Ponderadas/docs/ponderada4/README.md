@@ -1,5 +1,5 @@
 https://www.loom.com/share/0850158c538f4c8d9c4d5880ded8b244?sid=ca820a8f-4b0f-432e-932b-06ee81f01774
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/0850158c538f4c8d9c4d5880ded8b244?sid=d6553bcb-d4cc-43a8-9094-1de86624e072" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 
 # Sistema de Comunicação MQTT para Dados de Sensores
 
